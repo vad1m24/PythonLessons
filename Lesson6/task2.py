@@ -1,3 +1,4 @@
+
 str_num = input("Ввеедите выражение: ")
 print(str_num)
 element_1 = '*'
