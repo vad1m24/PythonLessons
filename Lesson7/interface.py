@@ -1,6 +1,7 @@
 from easygui import *
 from input import *
 from out import *
+from out import result_output
 from rational_calc import *
 
 var1 = ''

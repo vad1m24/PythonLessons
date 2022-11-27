@@ -1,6 +1,6 @@
 # Калькулятор рациональных чисел
 # пример 5 / 4 * 6 / 7 + 3 / 2 - 9
-from Lesson7.out import result_output
+from out import result_output
 from input import *
 from fractions import Fraction
 from interface import *
