@@ -1,7 +1,7 @@
-from interface import start_inteface
+from interface import start_interface
 
 def main_employees():
-    start_inteface()
+    start_interface()
 
 if __name__ == "__main__":
     main_employees()
