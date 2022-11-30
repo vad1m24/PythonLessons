@@ -13,6 +13,7 @@ def start_interface ():
     title = 'База данных работников'
     choices = ['Вывести полную базу данных','Добавление работника в базу данных','Удаление работника из базы данных','Отбор по критериям']
     choice = choicebox(msg, title, choices)
+    choice_interface(choice)
     return str(choice)
 
 def choice_interface(choice):
@@ -33,11 +34,9 @@ def choice_interface(choice):
         fieldNames = ['ФИО','Пол','Дата рождения','Семейное положение','Должность','Зарплата','Телефон']
         fieldValues = multenterbox(message,title,fieldNames)
         new_employee = fieldValues
-#        building_adding_json(new_employee)
         if fieldValues is None:
             choice_interface(start_interface())
         while 1:
-            building_adding_json(new_employee)
             errmsg = ""
             for i, name in enumerate(fieldNames):
                 if fieldValues[i].strip() == "":
@@ -47,6 +46,7 @@ def choice_interface(choice):
             fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
             if fieldValues is None:
                 break
+        building_adding_json(new_employee)
         message = "Новый работник{}".format(fieldValues) + "\nХотите еще добавить работников?"
         title = 'Добавление работника в базу данных'
         output = ynbox(message,title,("Да","Нет"))
@@ -90,5 +90,3 @@ def choice_interface(choice):
                 choice_interface('Отбор по критериям')
             else:
                 choice_interface(start_interface())
-
-choice_interface(start_interface())
